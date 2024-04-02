@@ -135,4 +135,13 @@ o descargarla directamente
 
 # Toolkits
 
-Herramientas reutilizables
+Herramientas reutilizables como bootstrap
+boostrap tienes que cargar todo
+
+tailwind tiene un monton de de funcionalidades pero todo dentro de html
+
+para usarlas mejor mirar las documentaciones
+
+tailwinds en principio no tiene componentes pero
+los puedes descargar aparte, sobre todo para layouts
+
