@@ -30,21 +30,23 @@ mejor aunque sea un poco verboso
 
 al renombrar cualquier archivo de js lo cambio a ts lo podra ejecutar como ts las extensione son
 a titulo informativo porque al ejecutarlo en node ya le estamos diciendo a un programa que lo
-ejecte
+ejecute
 
-para instalar typescript
+para instalar typescript:
 npm  init -y para iniciar el repo
 npm i -D typescript  para instalar la dependencia
 
-en script del packge.json
+en script del packge.json:
 "tsc": "tsc ejemplo/typescript/01.example.ts"
 
 npm run tsc
+
 o "dev": "tsc --watch ejemplos/typescript/01-example.ts"
 y run dev en modo watch 
 
 crea un archivo js del mismo nombre compilado a js
 
+para ejecutar comando de TS
 npx ts-node ejemplos/typescript/01-example.ts
 
 
@@ -115,3 +117,22 @@ bookLibrary.add({
 
 const stringLibrary = new Library<String>();
 
+# Hacemos un ejercicio de tipado
+
+
+lo bueno es que es compilado no nos da errores en tiempo de ejecucion
+
+# JSX
+
+Extension del lenguaje que usa react TSX (Reac+typescript)
+
+# Librerias
+
+Como CDN o descargar son las opciones para las dependencias
+CDN es un sistema distribuido
+con npm que es un gestor de dependencias
+o descargarla directamente
+
+# Toolkits
+
+Herramientas reutilizables

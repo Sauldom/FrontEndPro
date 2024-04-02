@@ -17,4 +17,36 @@ interface IProduct {
     category:string;
 }
 
-const ArrayProducts
+const arrayProducts:IProduct[] = [{
+    name: "bicicleta",
+    price: 20,
+    description: "bici",
+    category:"deporte",
+},
+{
+    name: "coche",
+    price: 10,
+    description: "coche juguete",
+    category:"juguete",
+},
+{
+    name: "zapatillas",
+    price: 30,
+    description: "super zapatillas",
+    category:"deporte",
+},
+]
+
+function findeCheapProduct(products:Array<IProduct>): IProduct{
+    let cheaper: IProduct = products[0];
+
+   products.forEach(element => {
+        if(element.price < cheaper.price){
+            cheaper = element;
+        }
+    });   
+    return cheaper;
+}
+
+
+console.log(findeCheapProduct(arrayProducts));
