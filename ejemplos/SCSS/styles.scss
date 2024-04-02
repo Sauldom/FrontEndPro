@@ -1,0 +1,33 @@
+//comentario de SCSSS
+
+/*
+*
+*/
+//esto seria nombre de la variable
+@use 'partials/config' as c;
+@use 'partial/mixin'
+
+$image-w:170px;
+%image{
+    width:$image-w;
+    height:auto;
+}
+
+
+div.nav#main-nav{
+    background: c.$bg-color;
+}
+
+h1{
+    color:c.$primary-color;
+}
+h2{
+    color:c.$secondary-color;
+}
+h3{
+    background-color: c.$bg-color;
+}
+img{
+    @extend %image;
+}
+

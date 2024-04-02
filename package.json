@@ -6,12 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc ejemplos/typescript/01-example.ts",
-    "dev": "ts-node ejemplos/typescript/01-example.ts"
+    "dev": "ts-node ejemplos/typescript/01-example.ts",
+    "sass:dev": "sass --watch ejemplos/SCSS/styles.scss ejemplos/SCSS/dist/styles.css",
+    "sass:build": "rimraf ejemplos/dist && sass --style compressed --no-source-map  ejemplos/SCSS/styles.scss ejemplos/SCSS/dist/styles.css "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "rimraf": "^5.0.5",
+    "sass": "^1.72.0",
     "typescript": "^5.4.3"
   },
   "dependencies": {
