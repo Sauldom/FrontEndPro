@@ -63,5 +63,74 @@ al compilar saldra 30vh
 
 @each ![alt text](image.png)
 
+# WEbpack
+
+un loader es una extension de webpack,  nos permite cargar un archivo del que cuelgan los demas
+es un complemento o dependencia y lo incrusta en el html
+el plugin hace algo mas
+
+Un "module bundler" (en español, "empaquetador de módulos") es una herramienta de desarrollo de software que se utiliza para combinar diferentes módulos o archivos de código en un único archivo que pueda ser utilizado por una aplicación web o aplicación de software. Estos módulos pueden estar escritos en varios lenguajes de programación como JavaScript, TypeScript, CSS, entre otros.
+
+El objetivo principal de un module bundler es simplificar la gestión de dependencias y optimizar el rendimiento de una aplicación al reducir el número de solicitudes HTTP necesarias para cargar la aplicación en el navegador o entorno de ejecución. Esto se logra al combinar todo el código de la aplicación en un solo archivo (o en varios archivos optimizados) que se pueda cargar de manera eficiente.
+coje lo que queremos y nos lo optimiza para produccion minifica el codigo, imagenes y demas
+
+pero vamos a usar 
+
+# parcel
+Es un bundler como webpack
+
+## ¿Que necesitamos?
+creamos una carpeta src
+y metemos los html las img los js y los css
+
+primeros pasos:
+
+instalar parcel
+npm i -D parcel
+
+en packge.json
+
+dev": "parcel src/index.html"
+npm run dev 
+
+nos puede dar varios errores porque no reconoce varios elementos porque va inspeciconando
+todo el codigo y puede tener errores en las referencias porque el package.json
+esta en un sitio diferente a la carpeta src
+
+todas las rutas tienen que ser realativas y te va  dar errores aunque deberia avisarte
+a mi hay algunas que no como las que estan dentro del css
+
+lo que estamos haciendo es levantar un entorno de desarrollo en ese fichero
+debes de poner la ruta que te da el server y no del live fijate 
+en las rutas que tienen que ser diferentes normalmente las crea a traves de un hash
+
+
+ponemos un rimraf para borrar archivos y directorios
+
+archivos a gitignore
+podemos poner en un source
+
+en packge.json
+
+podemos definir un entry point de nuestra aplicacion y ya no tenemos que
+decirle la ruta de inicio en los scripts
+
+"source": "src/index.html",
+  "browserlist":">0.5%, last 2 version, not dead",
+
+dev": "parcel",
+    "build": "rimraf dist && parcel build src/index.html"
+    "dev": "parcel --lazy --no-cache",
+
+npm run build
+  da un error al hacer un build porque en el package.json
+  en main tenemos un index.js tenemos que eliminar la linea de codigo
+
+aqui parcel ha tratado por ejemplo las imagenes y con la configuracion por defecto
+las ha metido en la carpeta de dist donde hace que todo tiene lo que necsita la
+aplicacion para funcionar
+
+
+
 
 
