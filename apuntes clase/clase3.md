@@ -65,7 +65,52 @@ En resumen, ValidityOptions es un tipo que representa las claves disponibles en 
 a la hora de poner un proxy en parcel hay qe mirar que sea secure si queremos acceder a una pagina con https
 
 # Vite
+npm i -D vite
 
+en package.json
+script 
+"dev": "vite"
 
+npm run dev
 
+creamos un script de build
+
+"build" : "vite build"
+
+npm run build
+
+en dist nos genera una carpeta de distribucion
+
+se queja nada mas empezar porque el script de js no es de tipo modulo
+type = "module"
+solo nos esta cogiendo uno de los archivos html que es el funcionamiento por defecto de vite
+hay que configurar vite apra decir que tiene multiples puntos de entrada
+
+mirar la documentacion
+[Multi-page App](https://vitejs.dev/guide/build.html#multi-page-app)
+
+en vite config.js
+import { resolve } from 'path'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+root:'src',
+  build: {
+    outDir: '../dist',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'src/index.html'),
+       teams: resolve(__dirname, 'src/teams.html'),
+      contact: resolve(__dirname, 'src/contact.html'),
+      },
+    },
+  },
+})
+
+cambiar las rutas que no pueda resolver
+
+y añadimos como root el src
+y el directorio donde queremos que guarde todo ('dist')
+
+esto es la configuracion inicial de vite
 
