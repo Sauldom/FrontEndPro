@@ -118,10 +118,8 @@ decirle la ruta de inicio en los scripts
 "source": "src/index.html",
   "browserlist":">0.5%, last 2 version, not dead",
 
-dev": "parcel",
-    "build": "rimraf dist && parcel build src/index.html"
-    "dev": "parcel --lazy --no-cache",
-
+d
+   
 npm run build
   da un error al hacer un build porque en el package.json
   en main tenemos un index.js tenemos que eliminar la linea de codigo
@@ -130,7 +128,44 @@ aqui parcel ha tratado por ejemplo las imagenes y con la configuracion por defec
 las ha metido en la carpeta de dist donde hace que todo tiene lo que necsita la
 aplicacion para funcionar
 
+con esta linea parcel sabe lo que tiene que ahcer para que se ejecute en el navegador
+"browserlist":">0.5%, last 2 version, not dead",
+
+ "dev": "parcel --lazy ",
+ solo carga las paginas o recursos cuando accedemos
+"dev": "parcel --lazy --no-cache"
+
+no utiliza la cache e entorno de desarrollo para evitar problemas o conflictos
+
+# instalar dependencias prueba
+instalamos la dependencia
+
+importamos y la llamamos en una variable
+
+parcel detecta un import de una libreria la intenta compilar
+falla la palabra import porque al cargarlo en el html no es tipo module
+
+parcel lo compila sin tener en cuenta si lo importamos si lo ponemos en un cnm
+
+# imagenes
+una de las mejores extensiones para imagenes web en webp
+si pones en la imagen ?as=webp me instala sharp
+y te lo convierte automaticamente
+
+me ha dado error per al recargar npm run dev lo ha instalado y lo ha ejecutado correctamente
+en las imagenes ./img/logo.png?as=webp o incluso ./img/logo.png?as=webp&quality=80
+o &height  usamos los query params para cambiar como queramos
 
 
+
+hace un reescalado automatico
+
+# SCSS
+en config adaptamos las variables
+ y en main asignamos una a font family
+ luego tendremos que decirle al html desde donde tiene que cargar este scss
+ <link rel="stylesheet" href="./scss/main.scss">
+
+ 
 
 
